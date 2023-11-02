@@ -3,22 +3,21 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      php: 7.4
+      php: 7.4 # Change this to your desired PHP version
   pre_build:
     commands:
-      - echo "Starting pre-build phase"
-      - composer clear-cache
-      - composer install # If you are using Composer for PHP dependencies
+      - echo "Installing dependencies..."
+      # Add any pre-build commands you may need here
   build:
     commands:
-      - echo "Starting build phase"
-      - # Add any build commands here
+      - echo "Building WordPress application..."
+      - wget https://wordpress.org/latest.tar.gz
+      - tar -zxvf latest.tar.gz
+      - cp -R wordpress/* .
+      - rm -rf wordpress latest.tar.gz
+      # Add any additional build commands you may need here
   post_build:
     commands:
-      - echo "Starting post-build phase"
-      - # Add any post-build commands here
-
-artifacts:
-  files:
-    - '**/*'
+      - echo "Post build steps..."
+      # Add any post-build steps you may need here
 
