@@ -13,10 +13,7 @@ phases:
       - echo "Building WordPress application..."
       - wget https://wordpress.org/latest.tar.gz
       - tar -zxvf latest.tar.gz
-      - cd /var/www/
-      - mkdir wordpress
-      - cd ~
-      - cp -R wordpress/* /var/www/wordpress/
+      - cp -R wordpress /var/www/
       - rm -rf wordpress latest.tar.gz
       # Add any additional build commands you may need here
   post_build:
