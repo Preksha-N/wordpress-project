@@ -7,7 +7,7 @@ phases:
   pre_build:
     commands:
       - echo "Starting pre-build phase"
-      - composer self-update
+      - composer clear-cache
       - composer install # If you are using Composer for PHP dependencies
   build:
     commands:
