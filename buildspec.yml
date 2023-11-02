@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      php: 7.4
+  pre_build:
+    commands:
+      - echo "Starting pre-build phase"
+      - composer install # If you are using Composer for PHP dependencies
+  build:
+    commands:
+      - echo "Starting build phase"
+      - # Add any build commands here
+  post_build:
+    commands:
+      - echo "Starting post-build phase"
+      - # Add any post-build commands here
+
+artifacts:
+  files:
+    - '**/*'
+
