@@ -20,4 +20,6 @@ phases:
     commands:
       - echo "Post build steps..."
       # Add any post-build steps you may need here
-
+artifacts:
+  files:
+    - '**/*'
